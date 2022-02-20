@@ -1,0 +1,121 @@
+:root {
+  --bg-color1: #73a2fc;
+  --bg-color2: #fccd73;
+  font-family: "Rubik", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--bg-color1);
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  color: var(--bg-color2);
+  margin-bottom: 15px;
+}
+
+div.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  text-align: right;
+}
+
+.form-group:nth-of-type(4) {
+  justify-content: flex-start;
+}
+
+.form-group:last-of-type {
+  justify-content: center;
+}
+
+label {
+  font-size: 1.5rem;
+  width: 100px;
+  text-align: center;
+  color: var(--bg-color2);
+}
+
+input {
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: var(--bg-color2);
+  color: var(--bg-color1);
+  font-weight: 700;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  padding: 5px 0;
+  margin-top: 5px;
+}
+
+a {
+  color: white;
+}
+
+.library-container {
+  margin-bottom: 28px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 3px solid white;
+}
+
+th {
+  font-size: 2rem;
+  color: var(--bg-color2);
+  padding: 5px 50px;
+}
+
+#warning {
+  color: red;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.library-row {
+  height: 50px;
+  border-bottom: 1px solid white;
+}
+
+.library-data {
+  text-align: center;
+  color: var(--bg-color2);
+  font-size: 1.5rem;
+}
