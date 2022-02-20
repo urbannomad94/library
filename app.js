@@ -4,6 +4,7 @@ libraryTable = document.querySelector('#library-table');
 libraryTableBody = document.querySelector('#library-table-body');
 formBtn = document.querySelector('#form-btn');
 form = document.querySelector('#form');
+allDeleteBookBtn = document.querySelectorAll('.delete-book-btn');
 
 let myLibrary = [];
 
@@ -33,7 +34,7 @@ function addBookToLibrary() {
     form.style.display = 'none';
 }
 
-//Adds new row to table with book
+//Adds new row to table with book info
 function addToTable() {
     let i = myLibrary.length - 1;
 
@@ -54,12 +55,18 @@ function addToTable() {
 
     newReadStatus = document.createElement('td');
     if (myLibrary[i].readStatus == true) {
-        newReadStatus.innerText = 'Read';
+        newReadStatus.innerHTML = 'Read';
     }
     else { 
-        newReadStatus.innerText = 'Unread';
+        newReadStatus.innerHTML = 'Unread';
     }
     newRow.appendChild(newReadStatus).classList.add('library-data');
+
+    deleteBookHolder = document.createElement('td');
+    newRow.appendChild(deleteBookHolder).classList.add('library-data');
+    deleteBookBtn = document.createElement('button');
+    deleteBookBtn.innerText = "Delete Book";
+    deleteBookHolder.appendChild(deleteBookBtn).classList.add('delete-book-btn');
 }
 
 //Switches form display from none to block
@@ -70,3 +77,17 @@ function showForm() {
 submitBtn.addEventListener('click', addBookToLibrary)
 
 formBtn.addEventListener('click', showForm)
+
+//Not working: trying to add eventlistener on each delete button that will delete the assoicated row
+
+/*
+allDeleteBookBtn.forEach(deleteBtn => {
+    deleteBtn.addEventListener('click', function(){
+        libraryTable.deleteRow(deleteBtn.parentElement.parentElement.rowIndex);
+    })
+})
+
+function deleteRow() {
+   libraryTable.deleteRow(deleteBookBtn.parentElement.parentElement.rowIndex);
+}
+*/
