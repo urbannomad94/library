@@ -1,6 +1,7 @@
 :root {
   --bg-color1: #73a2fc;
   --bg-color2: #fccd73;
+  --bg-color3: #7b73fc;
   font-family: "Rubik", sans-serif;
   font-size: 10px;
 }
@@ -51,14 +52,19 @@ input {
   padding: 5px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+#form-btn {
   padding: 10px 15px;
   background-color: var(--bg-color2);
   color: var(--bg-color1);
   font-weight: 700;
+  color: white;
+  border-radius: 10px;
+  border: none;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+#form-btn:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
@@ -118,4 +124,19 @@ th {
   text-align: center;
   color: var(--bg-color2);
   font-size: 1.5rem;
+}
+
+#form {
+  display: none;
+  position: absolute;
+  background: var(--bg-color3);
+  border: 2px solid white;
+  padding: 25px;
+  border-radius: 15px;
+  top: 200px;
+}
+
+#form-btn {
+  display: block;
+  margin: 0 auto;
 }
