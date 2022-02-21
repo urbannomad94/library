@@ -4,7 +4,6 @@ libraryTable = document.querySelector('#library-table');
 libraryTableBody = document.querySelector('#library-table-body');
 formBtn = document.querySelector('#form-btn');
 form = document.querySelector('#form');
-allDeleteBookBtn = document.querySelectorAll('.delete-book-btn');
 
 let myLibrary = [];
 
@@ -74,20 +73,17 @@ function showForm() {
     form.style.display = 'block';
 }
 
+//Deletes row that delete button is contained in
+function deleteBook(el) {
+    if (el.classList.contains('delete-book-btn')) {
+        el.parentElement.parentElement.remove();
+    }
+}
+
 submitBtn.addEventListener('click', addBookToLibrary)
 
 formBtn.addEventListener('click', showForm)
 
-//Not working: trying to add eventlistener on each delete button that will delete the assoicated row
-
-/*
-allDeleteBookBtn.forEach(deleteBtn => {
-    deleteBtn.addEventListener('click', function(){
-        libraryTable.deleteRow(deleteBtn.parentElement.parentElement.rowIndex);
-    })
+libraryTableBody.addEventListener('click', (e) => {
+    deleteBook(e.target)
 })
-
-function deleteRow() {
-   libraryTable.deleteRow(deleteBookBtn.parentElement.parentElement.rowIndex);
-}
-*/

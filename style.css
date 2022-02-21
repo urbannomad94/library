@@ -71,6 +71,11 @@ input[type="submit"]:hover,
   cursor: pointer;
 }
 
+input::placeholder {
+  opacity: 0.5;
+  font-style: italic;
+}
+
 footer {
   position: fixed;
   bottom: 0;
