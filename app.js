@@ -4,6 +4,7 @@ libraryTable = document.querySelector('#library-table');
 libraryTableBody = document.querySelector('#library-table-body');
 formBtn = document.querySelector('#form-btn');
 form = document.querySelector('#form');
+readStatusBtn = document.querySelector('.readStatusToggle');
 
 let myLibrary = [];
 
@@ -54,10 +55,10 @@ function addToTable() {
 
     newReadStatus = document.createElement('td');
     if (myLibrary[i].readStatus == true) {
-        newReadStatus.innerHTML = 'Read';
+        newReadStatus.innerHTML = '<button class="readStatusToggle">Read</button>';
     }
     else { 
-        newReadStatus.innerHTML = 'Unread';
+        newReadStatus.innerHTML = '<button class="readStatusToggle">Unread</button>';
     }
     newRow.appendChild(newReadStatus).classList.add('library-data');
 
@@ -80,10 +81,26 @@ function deleteBook(el) {
     }
 }
 
+//Toggle read status
+function toggleReadStatus(el) {
+   if (el.classList.contains('readStatusToggle')) {
+        if (el.innerText == 'Read') {
+            el.innerText = 'Unread';
+        }
+        else {
+            el.innerText = 'Read';
+        }
+   }
+}
+
 submitBtn.addEventListener('click', addBookToLibrary)
 
 formBtn.addEventListener('click', showForm)
 
 libraryTableBody.addEventListener('click', (e) => {
     deleteBook(e.target)
+})
+
+libraryTableBody.addEventListener('click', (e) => {
+    toggleReadStatus(e.target)
 })

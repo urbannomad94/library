@@ -54,7 +54,8 @@ input {
 
 input[type="submit"],
 #form-btn,
-.delete-book-btn {
+.delete-book-btn,
+.readStatusToggle {
   padding: 10px 15px;
   background-color: var(--bg-color2);
   color: var(--bg-color1);
@@ -66,7 +67,8 @@ input[type="submit"],
 
 input[type="submit"]:hover,
 #form-btn:hover,
-.delete-book-btn:hover {
+.delete-book-btn:hover,
+.readStatusToggle:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
