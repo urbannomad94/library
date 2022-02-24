@@ -9,11 +9,13 @@ readStatusBtn = document.querySelector('.readStatusToggle');
 let myLibrary = [];
 
 //Book object constructor
-function Book() {
-    this.title = form.title.value
-    this.author = form.author.value
-    this.pages = form.pages.value
-    this.readStatus = form.readStatus.checked
+class Book {
+    constructor() {
+        this.title = form.title.value
+        this.author = form.author.value
+        this.pages = form.pages.value
+        this.readStatus = form.readStatus.checked
+    }
 }
 
 //If all inputs are filled in on form a new instance of Book is created and pushed to myLibrary array
